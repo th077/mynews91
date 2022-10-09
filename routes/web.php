@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,9 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function() {
+    //NEWS
     Route::get('news/create', [NewsController::class, 'add']);
+    //Profile
+    Route::get('profile/create', [ProfileController::class, 'add']);
+    Route::get('profile/edit', [ProfileController::class, 'edit']);
 });
