@@ -27,3 +27,16 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('profile/create', [ProfileController::class, 'add']);
     Route::get('profile/edit', [ProfileController::class, 'edit']);
 });
+
+/*
+// news
+Route::controller(NewsController::class)->prefix('admin')->group(function() {
+    Route::get('news/create', 'add');
+});
+
+// profile
+Route::controller(ProfileController::class)->prefix('admin')->group(function() {
+    Route::get('profile/create', 'add');
+    Route::get('profile/edit', 'edit');
+});
+*/
