@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function() {
     //NEWS
-    Route::get('news/create', [NewsController::class, 'add']);
+    Route::get('news/create', [NewsController::class, 'add'])->middleware('auth');
     //Profile
     Route::get('profile/create', [ProfileController::class, 'add']);
     Route::get('profile/edit', [ProfileController::class, 'edit']);
