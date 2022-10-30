@@ -16,9 +16,11 @@ use App\Http\Controllers\Admin\ProfileController;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
 
 Route::group(['prefix' => 'admin'], function() {
     //NEWS
@@ -28,6 +30,9 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('profile/create', [ProfileController::class, 'add'])->middleware('auth');
     Route::get('profile/edit', [ProfileController::class, 'edit'])->middleware('auth');
 });
+
+use App\Http\Controllers\NewsController as PublicNewsController;
+Route::get('/', [PublicNewsController::class, 'index'])->name('news.index');
 
 /*
 // news
